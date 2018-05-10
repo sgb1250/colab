@@ -1,0 +1,31 @@
+https://medium.com/tensorflow/colab-an-easy-way-to-learn-and-use-tensorflow-d74d1686e309
+Colaboratory是一個託管的Jupyter筆記本電腦環境，可免費使用，無需安裝。您可能已經在機器學習速成課程，tensorflow.org的急切執行教程或各種研究文章（如本文）中看到過它。我們想提供5個使用技巧：
+
+1. TensorFlow已經預裝
+
+當您在colab.research.google.com上創建新筆記本時，TensorFlow已經預裝並針對所使用的硬件進行了優化。只是import tensorflow as tf，並開始編碼。
+
+2.在代碼單元中設置庫和數據依賴關係
+
+創建一個單元格  !pip install或  !apt-get按照您的預期工作。它還可以讓其他人輕鬆地重現您的設置。
+
+要獲取您的培訓數據，您可以按照以下教程獲取流行的數據源：BigQuery，雲端硬盤，Google表格或Google雲端存儲。您也可以訪問與外殼  !，這樣  !wget，  !pwd等也可能有幫助。
+
+3.與Github一起使用
+
+如果你在Github上有一個很好的.ipynb，你可以很容易地創建一個單擊鏈接讓你的讀者開始玩它。只需將您的Github路徑添加到colab.research.google.com/github/即可。例如，colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb將加載存儲在Github上的ipynb。
+
+
+您也可以使用File> Save a copy to Github輕鬆地將Colab筆記本的副本保存到Github中...
+
+4.共同分享和編輯
+
+Colab筆記本就像Google文檔和表格一樣。它們存儲在Google雲端硬盤中，可以進行共享，編輯和評論。只需點擊您創建的任何筆記本右上方的共享按鈕。
+
+5.硬件加速
+
+默認情況下，Colab筆記本在CPU上運行。通過運行時>更改運行時類型，然後選擇GPU，可以切換筆記本以使用GPU運行。您也可以按照以下說明讓Colab筆記本使用本地計算機的硬件。
+
+有關更多提示，請參閱我們的歡迎筆記本，閱讀我們的常見問題解答，或在使用Colab（幫助>搜索代碼片段..）時查找有用的代碼片段。
+
+謝謝，我們希望您喜歡使用TensorFlow和Colab！
