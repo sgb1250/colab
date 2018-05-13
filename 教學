@@ -1,0 +1,59 @@
+資料來源:https://towardsdatascience.com/fast-ai-lesson-1-on-google-colab-free-gpu-d2af89f53604
+
+
+Fast.ai Lesson 1 on Google Colab (Free GPU)
+In this post, I will demonstrate how to use google colab for fastai.
+
+Bit about Google Colab…(https://colab.research.google.com/)
+Google colab is a google internal research tool for data science for some time. They have released out the tool sometime earlier to the general public with a noble goal of dissemination of machine learning education and research. Although it’s been for quite a while there is a new feature that will interest a lot of people.
+
+You can use GPU as a backend for free for 12 hours at a time.
+GPU compute for free? Are you kidding me?
+
+These are the kind of questions that immediately popped into my mind and I gave it a shot. Indeed it’s working great and is very useful. Please go through this Kaggle discussion for more details regarding this announcement.A couple of important points from the discussion.
+
+The GPU used in the backend is K80(at this moment).
+The 12-hour limit is for a continuous assignment of VM. It means we can use GPU compute even after the end of 12 hours by connecting to a different VM.
+Google Colab has so many nice features and collaboration is one of the main features. I am not going to cover those features here but it is a good thing to explore especially if you are working together with a set of people.
+
+So let’s get started to use this service along with fastai.
+
+Getting Started
+You need to signup and apply for access before you start using google colab.
+Once you get the access, you can upload notebooks using File->Upload Notebook. I have uploaded the fastai lesson 1 notebook. And please visit this notebook for reference. Setup cells will be available in the shared notebook.
+To enable GPU backend for your notebook. Runtime->Change runtime type->Hardware Accelerator->GPU.
+To cross-check whether the GPU is enabled you can run the first cell in the shared notebook.
+
+Cross Check to see if GPU is enabled
+Installing Pytorch
+
+As the default environment doesn’t have Pytorch, We have to install this ourselves. Do remember that this has to be done every-time you connect to new VM. So don’t delete the cells.
+
+
+Installing Pytorch
+Installing fastai
+
+Same with fastai. We will use pip to install fastai.
+
+
+Installing fastai
+Along with this, there is a library libSM which is missing so we had to install the same.
+
+Downloading Data
+
+We can download our cats Vs dogs dataset and unzip it using a couple of bash commands
+
+
+Downloading Data
+That’s it we are good to go with lesson 1 on Google Colab after these steps. Let’s discuss some issues before we celebrate.
+
+Is the Process Smooth???
+As of now NO. But that is expected. Let’s see some minor issues.
+
+While trying to connect to GPU runtime, it sometimes throws an error saying it can’t connect. That’s due to the heavy number of people trying to use the service Vs the number of GPU machines. As per the kaggle discussion shared earlier, they plan to add more GPU machines.
+Sometimes, the runtime just dies intermittently. There may be many underlying causes for this.
+The amount of ram available is ~13GB which is too good given it is free.But with large networks like our resnet in lesson 1, there are memory warnings most of the times. While trying the final full network with unfreeze and differential learning rates, I almost always ran into issues which I am suspecting is due to the memory.
+Conclusion:
+Google is really helping to reduce the entry barrier into deep learning. And a tool like this will help many people who can’t afford GPU resources. I really hope that this will be a fully scaled service soon and will remain free.
+
+I will keep updating this post as I figure out how to deal with these minor issues and to make the process smooth. Please let me know in comments if anyone is able to workaround these minor issues.
